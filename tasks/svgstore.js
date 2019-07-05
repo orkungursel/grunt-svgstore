@@ -111,7 +111,7 @@ module.exports = function (grunt) {
         }
       }).map(function (filepath) {
         var filename = path.basename(filepath, '.svg');
-        var id = options.convertNameToId(filename);
+        var id = options.convertNameToId(filename, filepath);
         var contentStr = grunt.file.read(filepath);
         var $ = cheerio.load(contentStr, {
           normalizeWhitespace: true,
